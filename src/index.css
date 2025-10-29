@@ -1,0 +1,209 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Glassmorphism Portfolio Design System
+   Primary: #016B61 (Teal)
+   Accent: #70B2B2 (Light Teal)
+   All colors MUST be HSL
+*/
+
+@layer base {
+  :root {
+    /* Light Theme - Soft, Clean Backgrounds */
+    --background: 210 40% 98%;
+    --foreground: 175 98% 12%;
+
+    /* Glass Card Effects */
+    --card: 0 0% 100%;
+    --card-foreground: 175 98% 15%;
+    
+    /* Glass Overlay */
+    --glass-bg: 0 0% 100%;
+    --glass-border: 180 20% 90%;
+    
+    /* Popover */
+    --popover: 0 0% 100%;
+    --popover-foreground: 175 98% 15%;
+
+    /* Primary - Teal #016B61 */
+    --primary: 175 98% 21%;
+    --primary-foreground: 0 0% 100%;
+    --primary-light: 175 98% 35%;
+    
+    /* Accent - Light Teal #70B2B2 */
+    --accent: 180 32% 57%;
+    --accent-foreground: 175 98% 15%;
+    --accent-light: 180 32% 70%;
+
+    /* Secondary */
+    --secondary: 180 15% 94%;
+    --secondary-foreground: 175 98% 21%;
+
+    /* Muted */
+    --muted: 180 15% 95%;
+    --muted-foreground: 175 20% 45%;
+
+    /* Destructive */
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 100%;
+
+    /* Borders & Inputs */
+    --border: 180 20% 88%;
+    --input: 180 20% 90%;
+    --ring: 175 98% 21%;
+
+    /* Radius */
+    --radius: 1.5rem;
+    
+    /* Glassmorphism Effects */
+    --glass-blur: blur(12px);
+    --glass-opacity: 0.7;
+    --glass-bg: 240 10% 98% / 0.7;
+    --glass-border: 240 5% 90%;
+
+    /* Gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(var(--primary)) 0%, hsl(var(--accent)) 100%);
+    --gradient-subtle: linear-gradient(180deg, hsl(var(--background)) 0%, hsl(var(--primary) / 0.05) 100%);
+    
+    /* Sidebar */
+    --sidebar-background: 0 0% 100%;
+    --sidebar-foreground: 175 98% 15%;
+    --sidebar-primary: 175 98% 21%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 180 32% 57%;
+    --sidebar-accent-foreground: 0 0% 100%;
+    --sidebar-border: 180 20% 88%;
+    --sidebar-ring: 175 98% 21%;
+  }
+
+  .dark {
+    /* Dark Theme - Deep Charcoal with Teal Highlights */
+    --background: 180 15% 8%;
+    --foreground: 180 10% 95%;
+
+    /* Glass Card Effects */
+    --card: 180 15% 12%;
+    --card-foreground: 180 10% 95%;
+    
+    /* Glass Overlay */
+    --glass-bg: 180 15% 15%;
+    --glass-border: 180 20% 25%;
+
+    /* Popover */
+    --popover: 180 15% 12%;
+    --popover-foreground: 180 10% 95%;
+
+    /* Primary - Brighter Teal in Dark */
+    --primary: 175 85% 45%;
+    --primary-foreground: 180 15% 8%;
+    --primary-light: 175 85% 55%;
+
+    /* Accent - Light Teal */
+    --accent: 180 40% 65%;
+    --accent-foreground: 180 15% 8%;
+    --accent-light: 180 40% 75%;
+
+    /* Secondary */
+    --secondary: 180 15% 18%;
+    --secondary-foreground: 180 10% 95%;
+
+    /* Muted */
+    --muted: 180 15% 20%;
+    --muted-foreground: 180 10% 60%;
+
+    /* Destructive */
+    --destructive: 0 70% 55%;
+    --destructive-foreground: 0 0% 100%;
+
+    /* Borders & Inputs */
+    --border: 180 15% 22%;
+    --input: 180 15% 20%;
+    --ring: 175 85% 45%;
+    
+    /* Glassmorphism Effects */
+    --glass-blur: blur(16px);
+    --glass-opacity: 0.6;
+    --glass-bg: 222 47% 11% / 0.7;
+    --glass-border: 217 33% 17%;
+
+    /* Gradients for dark mode */
+    --gradient-primary: linear-gradient(135deg, hsl(var(--primary)) 0%, hsl(var(--accent)) 100%);
+    --gradient-subtle: linear-gradient(180deg, hsl(var(--background)) 0%, hsl(var(--primary) / 0.1) 100%);
+
+    /* Sidebar */
+    --sidebar-background: 180 15% 10%;
+    --sidebar-foreground: 180 10% 95%;
+    --sidebar-primary: 175 85% 45%;
+    --sidebar-primary-foreground: 180 15% 8%;
+    --sidebar-accent: 180 40% 65%;
+    --sidebar-accent-foreground: 180 15% 8%;
+    --sidebar-border: 180 15% 22%;
+    --sidebar-ring: 175 85% 45%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+  }
+  
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+@layer components {
+  /* Glassmorphism Card */
+  .glass-card {
+    @apply bg-card/70 backdrop-blur-xl border border-glass-border rounded-3xl shadow-lg;
+  }
+  
+  .glass-card-hover {
+    @apply glass-card transition-all duration-300 hover:shadow-2xl hover:scale-[1.02] hover:bg-card/80;
+  }
+  
+  /* Hero Glass Panel */
+  .glass-hero {
+    @apply bg-gradient-to-br from-card/80 to-card/60 backdrop-blur-2xl border border-glass-border rounded-3xl shadow-2xl;
+  }
+  
+  /* Sidebar Glass */
+  .glass-sidebar {
+    @apply backdrop-blur-xl border-r border-sidebar-border;
+    background-color: hsl(var(--sidebar-background) / 0.8);
+  }
+  
+  /* Button Variants */
+  .btn-hero {
+    @apply bg-primary text-primary-foreground hover:bg-primary-light font-semibold px-6 py-3 rounded-2xl transition-all duration-300 hover:shadow-xl hover:scale-105;
+  }
+  
+  .btn-glass {
+    @apply bg-card/50 backdrop-blur-md border border-glass-border text-foreground hover:bg-card/70 font-medium px-6 py-3 rounded-2xl transition-all duration-300 hover:shadow-lg;
+  }
+  
+  /* Tech Badge */
+  .tech-badge {
+    @apply inline-flex items-center gap-2 px-4 py-2 bg-accent/20 text-accent-foreground rounded-full text-sm font-medium border border-accent/30 backdrop-blur-sm;
+  }
+  
+  /* Skill Level Badge */
+  .skill-expert {
+    @apply bg-primary/20 text-primary border-primary/40;
+  }
+  
+  .skill-comfortable {
+    @apply bg-accent/20 text-accent border-accent/40;
+  }
+  
+  .skill-learning {
+    @apply bg-muted text-muted-foreground border-border;
+  }
+}
