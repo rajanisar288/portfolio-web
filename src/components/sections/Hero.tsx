@@ -56,7 +56,7 @@ export function Hero() {
                 Download Resume
               </Button> */}
               <a
-  href="https://drive.google.com/file/d/1yS-ykMGFZa9UxJ_8syqi_VqEutDEKopz/view?usp=sharing"
+  href="https://drive.google.com/file/d/1ZuJvB9Co1KoEAeWbvWWMGI8zB-dKp-Vw/view?usp=sharing"
   target="_blank"
   rel="noopener noreferrer"
 >
