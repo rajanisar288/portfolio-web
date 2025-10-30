@@ -34,7 +34,26 @@ export default function ProjectDetail() {
       <div className="min-h-screen flex items-center justify-center">
         <div className="text-center">
           <h1 className="text-4xl font-bold mb-4">Project Not Found</h1>
-          <Button onClick={() => navigate("/projects")}>
+          <Button   onClick={() => {
+  const prev = document.referrer;
+
+  // If previous page is from this site
+  if (prev && prev.includes(window.location.origin)) {
+
+    // If previous was /projects, skip it and go home
+    if (prev.endsWith("/projects")) {
+      navigate("/");
+    } else {
+      window.history.back();
+    }
+
+  } else {
+    // If no internal ref (opened directly), go home
+    navigate("/");
+  }
+}}
+
+>
             <ArrowLeft className="w-4 h-4 mr-2" />
             Back to Projects
           </Button>
@@ -53,7 +72,24 @@ export default function ProjectDetail() {
         {/* Back Button */}
         <Button
           variant="ghost"
-          onClick={() => navigate("/projects")}
+          onClick={() => {
+            const prev = document.referrer;
+          
+            // If previous page is from this site
+            if (prev && prev.includes(window.location.origin)) {
+          
+              // If previous was /projects, skip it and go home
+              if (prev.endsWith("/projects")) {
+                navigate("/");
+              } else {
+                window.history.back();
+              }
+          
+            } else {
+              // If no internal ref (opened directly), go home
+              navigate("/");
+            }
+          }}
           className="mb-8 glass-card-hover rounded-xl"
         >
           <ArrowLeft className="w-4 h-4 mr-2" />
@@ -87,10 +123,10 @@ export default function ProjectDetail() {
                 Source Code
               </Button>
             )}
-            <Button variant="outline" className="glass-card-hover rounded-xl">
+            {/* <Button variant="outline" className="glass-card-hover rounded-xl">
               <Download className="w-4 h-4 mr-2" />
               Case Study PDF
-            </Button>
+            </Button> */}
           </div>
 
           <div className="flex flex-wrap gap-2">

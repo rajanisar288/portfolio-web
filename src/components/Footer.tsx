@@ -1,10 +1,10 @@
-import { Github, Linkedin, Twitter, Mail } from "lucide-react";
+import { Github, Linkedin, Twitter, Mail, Instagram } from "lucide-react";
 
 const socialLinks = [
-  { icon: Github, url: "https://github.com/devnisar", label: "GitHub" },
-  { icon: Linkedin, url: "https://linkedin.com/in/devnisar", label: "LinkedIn" },
-  { icon: Twitter, url: "https://twitter.com/devnisar", label: "Twitter" },
-  { icon: Mail, url: "mailto:dev.nisar@example.com", label: "Email" },
+  { icon: Github, url: "https://github.com/rajanisar288", label: "GitHub" },
+  { icon: Linkedin, url: "https://www.linkedin.com/in/nisar-ahmed-35572120a/", label: "LinkedIn" },
+  { icon: Instagram, url: "https://www.instagram.com/dev.nisarr/?igsh=MTExcXMweTluaXFuZQ%3D%3D#", label: "Instagram" },
+  { icon: Mail, url: "mailto:dev.m.nisar191@gmail.com", label: "Email" },
 ];
 
 export function Footer() {

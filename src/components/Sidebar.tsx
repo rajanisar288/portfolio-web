@@ -8,13 +8,13 @@ const navItems = [
   { 
     name: "Tech Stack", 
     section: "tech-stack", 
-    icon: Code,
-    subItems: [
-      { name: "Frontend", section: "tech-stack", data: "frontend" },
-      { name: "Backend", section: "tech-stack", data: "backend" },
-      { name: "Tools", section: "tech-stack", data: "tools" },
-      { name: "Other", section: "tech-stack", data: "other" },
-    ]
+    icon: Code
+    // subItems: [
+    //   { name: "Frontend", section: "tech-stack", data: "frontend" },
+    //   { name: "Backend", section: "tech-stack", data: "backend" },
+    //   { name: "Tools", section: "tech-stack", data: "tools" },
+    //   { name: "Other", section: "tech-stack", data: "other" },
+    // ]
   },
   { name: "Projects", section: "projects", icon: Briefcase },
   { name: "About Me", section: "about", icon: User },
@@ -67,7 +67,7 @@ export function Sidebar() {
             className="fixed top-0 left-0 h-screen w-72 glass-sidebar z-40 flex flex-col"
           >
         {/* Logo / Brand */}
-        <div className="p-8 border-b border-sidebar-border">
+        <div className="p-8 border-b border-sidebar-border mt-10">
           <h1 className="text-2xl font-bold bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
             Dev Nisar
           </h1>
@@ -78,7 +78,7 @@ export function Sidebar() {
         <nav className="flex-1 p-6 space-y-2 overflow-y-auto">
           {navItems.map((item) => (
             <div key={item.name}>
-              {item.subItems ? (
+              {/* {item?.subItems ? (
                 <div>
                   <button
                     onClick={() => {
@@ -132,7 +132,17 @@ export function Sidebar() {
                   <item.icon className="w-5 h-5" />
                   <span className="font-medium">{item.name}</span>
                 </button>
-              )}
+              )} */}
+               <button
+                  onClick={() => {
+                    scrollToSection(item.section);
+                    setIsOpen(false);
+                  }}
+                  className="flex items-center gap-3 p-3 rounded-2xl transition-all duration-300 group hover:bg-sidebar-accent/10 w-full text-left"
+                >
+                  <item.icon className="w-5 h-5" />
+                  <span className="font-medium">{item.name}</span>
+                </button>
             </div>
           ))}
         </nav>

@@ -4,46 +4,62 @@ import { Button } from "../ui/button";
 
 const experience = [
   {
-    title: "Senior Full Stack Developer",
-    company: "Tech Innovations Inc",
-    period: "2022 - Present",
-    description: "Leading development of enterprise web applications and mentoring junior developers",
+    title: "Full Stack Developer",
+    company: "Cipherslab LLC",
+    period: "Dec 2024 - Oct 2025",
+    description:
+      "Worked on advanced AI-driven products including code-generation systems, voice-to-action AI agents, and automation workflows. Integrated Mapbox with multi-layer mapping, built e-commerce systems with Stripe, and contributed to high-performance interactive tools similar to Photoshop using Angular, React, and Next.js.",
   },
   {
-    title: "Full Stack Developer",
-    company: "Digital Solutions Ltd",
-    period: "2020 - 2022",
-    description: "Built scalable web applications using React, Node.js, and cloud technologies",
+    title: "Frontend Developer (Angular)",
+    company: "Crekey Solutions",
+    period: "Oct 2022 - Nov 2022",
+    description:
+      "Developed and maintained a project management platform using Angular, Angular Material, and DevExtreme. Built responsive UI components, optimized user workflows, and implemented real-time updates with RxJS while maintaining scalable frontend architecture.",
   },
   {
     title: "Frontend Developer",
-    company: "Creative Agency",
-    period: "2018 - 2020",
-    description: "Developed responsive websites and interactive web experiences",
+    company: "Poulta Inc",
+    period: "Jun 2021 - Sep 2022",
+    description:
+      "Contributed to a real-time, data-driven poultry farm management system. Built responsive interfaces with Angular & TypeScript to visualize live insights and help predict and prevent losses using advanced data monitoring pipelines.",
   },
 ];
 
+
 const education = [
   {
-    degree: "Bachelor of Computer Science",
-    institution: "Tech University",
-    period: "2014 - 2018",
+    degree: "Diploma in Information Technology (DIT) & Certificate in Web Development",
+    institution: "Dignous Innovation Center (DIC)",
+    period: "Jan 2020 - Oct 2022",
+  },
+  {
+    degree: "Intermediate in Pre-Engineering – Grade A",
+    institution: "Mehran Degree College, Moro Town Campus",
+    period: "Aug 2020 - Dec 2021",
   },
 ];
+
 
 const hobbies = [
   "Open Source Contribution",
   "Tech Blogging",
   "UI/UX Design",
   "Photography",
+  "Spring Boot (Java)",
+  "Machine Learning",
+  "AWS (S3, Lambda)",
+  "LangChain & Python for AI",
 ];
 
+
 const achievements = [
-  "Built 50+ production websites",
-  "Contributed to 20+ open source projects",
-  "Mentored 15+ junior developers",
-  "Published 30+ technical articles",
+  "Delivered 15+ real-world client projects from concept to deployment",
+  "Transformed innovative ideas into fully functional digital products",
+  "Mentored and guided 10+ students to enter the tech industry and land jobs in top companies",
+  "Successfully handled freelance and professional projects, ensuring quality and timely delivery",
 ];
+
 
 export function About() {
   return (
@@ -155,22 +171,34 @@ export function About() {
               <h3 className="text-2xl font-bold">Goals</h3>
             </div>
             <p className="text-muted-foreground leading-relaxed">
-              Continuously learning and exploring new technologies. Aiming to contribute more 
-              to open source, share knowledge through technical writing, and build products 
-              that make a positive impact on people's lives.
+            My mission is to build a world-class tech company in Pakistan and create 
+  opportunities for talented individuals — especially those who have skills 
+  but lack a formal degree. Having faced this challenge myself, I aspire to 
+  provide a platform where skill and innovation matter more than certificates.
+  <br /><br />
+  Currently working on AI-driven automation projects, including an intelligent 
+  agent capable of performing trained actions such as booking tickets based on 
+  user commands (NTP Detection AI Model). My goal is to empower people, create 
+  jobs, and build technology that shapes the future.
             </p>
           </div>
         </div>
 
         {/* Download CV */}
         <div className="text-center">
-          <Button
-            size="lg"
-            className="bg-primary hover:bg-primary-light text-primary-foreground font-semibold px-8 py-6 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300"
-          >
-            <Download className="w-5 h-5 mr-2" />
-            Download Full CV
-          </Button>
+        <a
+   href="https://drive.google.com/file/d/1yS-ykMGFZa9UxJ_8syqi_VqEutDEKopz/view?usp=sharing"
+  target="_blank"
+  rel="noopener noreferrer"
+>
+  <Button
+    size="lg"
+    className="bg-primary hover:bg-primary-light text-primary-foreground font-semibold px-8 py-6 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300"
+  >
+    <Download className="w-5 h-5 mr-2" />
+    Download Resume
+  </Button>
+</a>
         </div>
       </motion.div>
     </section>

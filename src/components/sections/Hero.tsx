@@ -39,9 +39,7 @@ export function Hero() {
               transition={{ delay: 0.4 }}
               className="text-lg text-muted-foreground leading-relaxed"
             >
-              Crafting beautiful, performant web applications with modern technologies. 
-              Specialized in React, Node.js, and cloud architecture. Passionate about 
-              creating seamless user experiences and scalable solutions.
+             A passionate Full Stack Developer who loves turning ideas into powerful, user-focused digital experiences. With over 3 years of hands-on experience, I specialize in building scalable web applications using Angular, Node.js, Express.js, and MongoDB. I combine modern frontend tools like Angular Material, Taiga UI, DevExtreme, and Tailwind CSS with robust backend technologies such as Sails.js, Redis, and Prisma ORM to deliver seamless performance. My workflow embraces clean architecture, RESTful APIs, real-time communication with WebSockets, and smooth state management with NgRx and Redux. I’m constantly exploring new ways to blend design and technology—crafting responsive, high-quality, and maintainable solutions that bring ideas to life.
             </motion.p>
 
             <motion.div
@@ -50,14 +48,28 @@ export function Hero() {
               transition={{ delay: 0.6 }}
               className="flex flex-wrap gap-4"
             >
-              <Button
+              {/* <Button
                 size="lg"
                 className="bg-primary hover:bg-primary-light text-primary-foreground font-semibold px-8 py-6 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300"
               >
                 <Download className="w-5 h-5 mr-2" />
                 Download Resume
-              </Button>
-              <Button
+              </Button> */}
+              <a
+  href="https://drive.google.com/file/d/1yS-ykMGFZa9UxJ_8syqi_VqEutDEKopz/view?usp=sharing"
+  target="_blank"
+  rel="noopener noreferrer"
+>
+  <Button
+    size="lg"
+    className="bg-primary hover:bg-primary-light text-primary-foreground font-semibold px-8 py-6 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300"
+  >
+    <Download className="w-5 h-5 mr-2" />
+    Download Resume
+  </Button>
+</a>
+
+              {/* <Button
                 variant="outline"
                 size="lg"
                 className="glass-card-hover px-8 py-6 rounded-2xl font-semibold"
@@ -65,7 +77,7 @@ export function Hero() {
               >
                 <Mail className="w-5 h-5 mr-2" />
                 Hire Me
-              </Button>
+              </Button> */}
             </motion.div>
           </div>
 
@@ -94,9 +106,9 @@ export function Hero() {
       className="h-[400px] lg:h-[500px] overflow-hidden glass-card"
     >
       <img
-        src="https://images.pexels.com/photos/846741/pexels-photo-846741.jpeg?cs=srgb&dl=pexels-olly-846741.jpg&fm=jpg"
+        src="/2.JPG"
         alt="My Photo"
-        className="w-full h-full object-cover"
+        className="w-full h-full object-cover object-top"
         onLoad={() => setLoaded(true)} // start animation only when image loads
       />
     </motion.div>

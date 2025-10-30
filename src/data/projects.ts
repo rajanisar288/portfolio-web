@@ -15,57 +15,90 @@ export interface Project {
 
 export const projects: Project[] = [
   {
-    id: "ecommerce-platform",
-    title: "E-Commerce Platform",
-    summary: "Full-stack e-commerce solution with real-time inventory and payment processing",
-    description: "A comprehensive e-commerce platform built with modern web technologies. Features include product catalog, shopping cart, secure checkout with Stripe integration, order tracking, and admin dashboard for inventory management.",
-    technologies: ["React", "Node.js", "PostgreSQL", "Stripe", "AWS", "Docker"],
-    screenshots: ["/placeholder.svg"],
-    liveUrl: "https://example.com",
-    repoUrl: "https://github.com/devnisar/ecommerce",
-    challenges: "Managing real-time inventory across multiple warehouses while ensuring data consistency and handling high traffic during sales events.",
-    solutions: "Implemented Redis caching, database sharding, and event-driven architecture with message queues for reliable inventory updates.",
+    id: "promptreports-ai",
+    title: "PromptReports.AI",
+    summary: "Traditional research takes months and costs a fortune. We deliver expert insights on-demand, no contracts required.",
+    description:
+      "PromptReports.AI is a next-generation research and insights platform built for speed and scalability. Designed with a focus on real-time data delivery, it enables users to generate and purchase expert-level reports instantly. The project integrates secure Stripe payments, advanced query handling, and a modern UI for seamless experience across all devices.",
+    technologies: [
+      "Next.js",
+      "Prisma",
+      "Tailwind CSS",
+      "Redux",
+      "Vercel",
+      "Stripe",
+      "PostgreSQL",
+      "OpenRouter",
+    ],
+    screenshots: ["/prompt/1.png","/prompt/2.png","/prompt/3.png","/prompt/4.png","/prompt/5.png","/prompt/6.png", ],
+    liveUrl: "https://www.promptreports.ai/",
+    repoUrl: "",
+    challenges:
+      "The application faced latency issues in Next.js APIs and state synchronization problems within the Context API during concurrent requests.",
+    solutions:
+      "Optimized Next.js API routes with Prisma query tuning, implemented Redux for efficient state management, and utilized server-side rendering for faster data delivery. Deployed on Vercel for enhanced performance and scalability.",
     role: "Full Stack Developer",
-    timeline: "3 months",
+    timeline: "3+ months",
+  }
+,  
+{
+  id: "bkw-id",
+  title: "BKW",
+  summary:
+    "We are an international energy and infrastructure company offering integrated solutions in energy, buildings, and infrastructure.",
+  description:
+    "A private enterprise-grade project management system used internally by BKW employees in Switzerland. This platform enables teams to manage projects, budgets, planning, and resource allocation. Due to privacy restrictions, only landing-page screenshots are displayed.",
+  technologies: [
+    "Angular 8",
+    "TypeScript",
+    "DevExtreme",
+    "Chart.js",
+    "Bootstrap",
+    "Node.js",
+    "Sails.js",
+    "WebSockets"
+  ],
+  screenshots: ["/bkw/1.png","/bkw/2.png","/bkw/3.png","/bkw/4.png"],
+  liveUrl: "https://www.bkw.com/en",
+  repoUrl: "",
+  challenges:
+    "The application was originally built using Angular 8 and DevExtreme UI components. The company decided to move to a modern theme and UI standards, including redesigning key modules like Gantt charts while maintaining the existing logic and performance.",
+  solutions:
+    "Enhanced and modernized the UI theme across the entire platform, migrated components without breaking business workflows, upgraded DevExtreme styling, improved Gantt chart UI and functionality, and introduced new features while ensuring backward compatibility.",
+  role: "Frontend Developer (Specialist)",
+  timeline: "More than 1 year",
+}
+,
+  {
+    id: "wizzdi-id",
+    title: "Wizzdi",
+    summary: "The Unlocked No-Code Backend",
+    description: "Rapidly build custom solutions, deploy Anywhere, and scale effortlessly. Our AI-Enhanced Platform Offers Unmatched Flexibility, Empowering Everyone From Startups To Enterprises To Innovate Without Limits.",
+    technologies: ["Angular Material", "SASS", "Websocket", "Angular", "Codegen"],
+    screenshots: ["/wizzdi/1.png","/wizzdi/2.png","/wizzdi/3.png","/wizzdi/4.png"],
+    liveUrl:"https://wizzdi.com/",
+   
+    challenges:
+    "The application required real-time UI updates with minimal API requests, but frequent calls were increasing latency and server load.",
+  solutions:
+    "Implemented code-generation-based live data syncing using WebSockets, significantly reducing API calls while ensuring instant UI updates and seamless real-time collaboration.",
+  role: "Frontend Angular Developer",
+  timeline: "2+ months",
   },
   {
-    id: "social-dashboard",
-    title: "Social Media Dashboard",
-    summary: "Analytics dashboard for social media managers with real-time data visualization",
-    description: "A powerful analytics tool that aggregates data from multiple social media platforms. Provides insights on engagement, growth metrics, and content performance with beautiful visualizations.",
-    technologies: ["React", "TypeScript", "Chart.js", "Express", "MongoDB"],
-    screenshots: ["/placeholder.svg"],
-    liveUrl: "https://example.com",
-    repoUrl: "https://github.com/devnisar/social-dashboard",
-    challenges: "Integrating multiple social media APIs with different rate limits and data formats while maintaining real-time updates.",
-    solutions: "Built a custom aggregation service with intelligent caching and webhook listeners for real-time updates without exceeding API limits.",
-    role: "Frontend Lead",
-    timeline: "2 months",
-  },
-  {
-    id: "task-manager",
-    title: "Collaborative Task Manager",
-    summary: "Team collaboration tool with real-time updates and project tracking",
-    description: "A modern task management application designed for remote teams. Features include project boards, task assignments, real-time collaboration, file sharing, and progress tracking.",
-    technologies: ["Next.js", "WebSockets", "PostgreSQL", "Prisma", "Tailwind CSS"],
-    screenshots: ["/placeholder.svg"],
-    repoUrl: "https://github.com/devnisar/task-manager",
-    challenges: "Implementing real-time collaboration features with conflict resolution when multiple users edit the same task simultaneously.",
-    solutions: "Used operational transformation algorithms and WebSocket channels for real-time synchronization with automatic conflict resolution.",
-    role: "Full Stack Developer",
-    timeline: "4 months",
-  },
-  {
-    id: "portfolio-builder",
-    title: "Portfolio Builder SaaS",
-    summary: "Drag-and-drop portfolio builder for developers and designers",
-    description: "A SaaS platform that allows users to create beautiful portfolio websites without coding. Features include customizable templates, drag-and-drop editor, custom domains, and analytics.",
-    technologies: ["React", "Node.js", "MongoDB", "AWS S3", "Stripe"],
-    screenshots: ["/placeholder.svg"],
-    liveUrl: "https://example.com",
-    challenges: "Building a flexible template system that allows for customization while maintaining performance and generating SEO-friendly static pages.",
-    solutions: "Implemented a component-based template engine with server-side rendering and static site generation for optimal performance and SEO.",
-    role: "Solo Developer",
-    timeline: "5 months",
-  },
+    id: "inesephoto-id",
+    title: "Inese Photo",
+    summary: "Portfolio website deployment for an elopement and adventure wedding photographer in Norway.",
+    description: "A stunning photography portfolio built by the client. I handled cloud deployment and ensured high performance, security, and stable hosting.",
+    technologies: ["AWS EC2", "Nginx", "Linux", "SSL", "DNS"],
+    screenshots: ["/wedding/1.png", "/wedding/1.png"],
+    liveUrl: "https://www.inesephoto.com/norway-elopement-photography/",
+    
+    challenges: "Deploy a static photography website on a scalable and secure cloud environment, ensuring fast CDN delivery and zero downtime.",
+    solutions: "Configured AWS EC2 hosting, Nginx reverse proxy, domain setup, SSL certificates, caching rules, and ensured optimized performance.",
+    
+    role: "Deployment & DevOps Engineer",
+    timeline: "2 Days",
+  }
+  
 ];

@@ -1,17 +1,18 @@
 import { motion } from "framer-motion";
-import { Mail, Github, Linkedin, Twitter } from "lucide-react";
+import { Mail, Github, Linkedin, Twitter, Instagram } from "lucide-react";
 import { useState } from "react";
 import { Button } from "../ui/button";
 import { Input } from "../ui/input";
 import { Textarea } from "../ui/textarea";
 import { Label } from "../ui/label";
 import { useToast } from "@/hooks/use-toast";
+import emailjs from "emailjs-com";
 
 const socialLinks = [
-  { icon: Github, url: "https://github.com/devnisar", label: "GitHub" },
-  { icon: Linkedin, url: "https://linkedin.com/in/devnisar", label: "LinkedIn" },
-  { icon: Twitter, url: "https://twitter.com/devnisar", label: "Twitter" },
-  { icon: Mail, url: "mailto:dev.nisar@example.com", label: "Email" },
+  { icon: Github, url: "https://github.com/rajanisar288", label: "GitHub" },
+  { icon: Linkedin, url: "https://www.linkedin.com/in/nisar-ahmed-35572120a/", label: "LinkedIn" },
+  { icon: Instagram, url: "https://www.instagram.com/dev.nisarr/?igsh=MTExcXMweTluaXFuZQ%3D%3D#", label: "Instagram" },
+  { icon: Mail, url: "mailto:dev.m.nisar191@gmail.com", label: "Email" },
 ];
 
 export function Contact() {
@@ -22,24 +23,46 @@ export function Contact() {
     subject: "",
     message: "",
   });
+
   const [isSubmitting, setIsSubmitting] = useState(false);
 
-  const handleSubmit = async (e: React.FormEvent) => {
+  const handleSubmit = (e) => {
     e.preventDefault();
     setIsSubmitting(true);
 
-    // Simulate form submission
-    setTimeout(() => {
-      toast({
-        title: "Message sent!",
-        description: "Thank you for reaching out. I'll get back to you soon.",
-      });
-      setFormData({ name: "", email: "", subject: "", message: "" });
-      setIsSubmitting(false);
-    }, 1000);
+    emailjs
+      .send(
+        "service_w0dsgvr",
+        "template_siij6m8",
+        {
+          name: formData.name,
+          email: formData.email,
+          subject: formData.subject,
+          message: formData.message,
+        },
+        "e5rnq9VeW6nWjvenM" // ⚠️ Your EmailJS Public Key (DO NOT REMOVE)
+      )
+      .then(
+        () => {
+          toast({
+            title: "Message Sent Successfully ✅",
+            description: "Thanks for reaching out! I will get back to you soon.",
+          });
+          setFormData({ name: "", email: "", subject: "", message: "" });
+          setIsSubmitting(false);
+        },
+        () => {
+          toast({
+            title: "Failed to send message ❌",
+            description: "Something went wrong, please try again.",
+            variant: "destructive",
+          });
+          setIsSubmitting(false);
+        }
+      );
   };
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+  const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
@@ -58,7 +81,7 @@ export function Contact() {
             </span>
           </h2>
           <p className="text-lg text-muted-foreground">
-            Let's discuss your next project or just say hi
+            Let's build something amazing together 🚀
           </p>
         </div>
 
@@ -130,7 +153,7 @@ export function Contact() {
             </form>
           </div>
 
-          {/* Social Links & Info */}
+          {/* Social & Info */}
           <div className="space-y-8">
             <div className="glass-card p-8">
               <h3 className="text-2xl font-bold mb-6">Connect With Me</h3>
@@ -157,14 +180,14 @@ export function Contact() {
             <div className="glass-card p-8">
               <h3 className="text-2xl font-bold mb-4">Location</h3>
               <p className="text-muted-foreground mb-6">
-                Based in San Francisco, CA
+                Based in Karachi, Pakistan 🇵🇰
                 <br />
-                Available for remote work worldwide
+                Available for remote work worldwide 🌍
               </p>
 
               <h3 className="text-2xl font-bold mb-4">Response Time</h3>
               <p className="text-muted-foreground">
-                I typically respond within 24-48 hours during weekdays.
+                I typically respond within 24 hours.
               </p>
             </div>
           </div>
